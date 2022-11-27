@@ -1,4 +1,5 @@
 # must be run with pgzrun
+import pgzrun
 
 def draw():
     for y in range(room_height):
@@ -9,13 +10,15 @@ def draw():
                 top_left_y + (y*30) - image_to_draw.get_height()))
 
 room_map = [
-    [1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 0, 0, 0, 0, 0, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 1, 1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 0, 0, 0, 1, 1, 1]
 ]
 
 WIDTH = 800
@@ -26,7 +29,9 @@ top_left_y = 150
 
 DEMO_OBJECTS = [images.floor, images.pillar]
 
-room_height = 7
-room_width = 5
+room_height = 9
+room_width = 9
 
 # draw()
+
+pgzrun.go()
